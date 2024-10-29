@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control ICel-Pergamino - Productos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Control ICel-Pergamino</h1>
+    <div class="button-container">
+        <button class="rounded-button" onclick="window.location.href='index.html'">Volver a Inicio</button>
+        <button class="rounded-button" id="btn-ingresar-producto">Ingresar Producto</button>
+    </div>
+    <div class="products-box">
+        <h2>Lista de Productos</h2>
+        <table id="products-table">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Cantidad</th>
+                    <th>Precio de Costo</th>
+                    <th>Precio de Venta</th>
+                    <th>Descripción</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Las filas de productos se agregarán aquí dinámicamente con JavaScript -->
+            </tbody>
+        </table>
+    </div>
+    <div id="producto-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Ingresar Nuevo Producto</h2>
+            <form id="form-nuevo-producto">
+                <input type="text" id="input-nombre-producto" placeholder="Nombre del producto" required>
+                <input type="number" id="input-cantidad-producto" placeholder="Cantidad" required>
+                <input type="number" id="input-precio-costo" placeholder="Precio de costo" step="0.01" required>
+                <input type="number" id="input-precio-venta" placeholder="Precio de venta" step="0.01" required>
+                <textarea id="input-descripcion-producto" placeholder="Descripción"></textarea>
+                <button type="submit">Guardar Producto</button>
+            </form>
+        </div>
+    </div>
+    <script src="productos.js"></script>
+</body>
+</html>

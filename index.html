@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control ICel-Pergamino</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#4CAF50">
+    <link rel="apple-touch-icon" href="icon-192x192.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+</head>
+<body>
+    <div class="header">
+        <h1 id="titulo-negocio">Control ICel-Pergamino</h1>
+        <button id="btn-registrar" class="rounded-button">Registrar</button>
+    </div>
+    <div class="button-container">
+        <button class="rounded-button" id="btn-pedidos">Pedidos</button>
+        <button class="rounded-button" id="btn-ventas">Ventas</button>
+        <button class="rounded-button" id="btn-clientes">Clientes</button>
+        <button class="rounded-button" id="btn-guardar-venta">Guardar Venta Diaria</button>
+        <button class="rounded-button" onclick="window.location.href='productos.html'">Ver Productos</button>
+    </div>
+    <div class="sales-box">
+        <h2>Registro de Ventas</h2>
+        <div class="input-container">
+            <input type="number" id="input-cantidad" placeholder="Cantidad">
+            <input type="text" id="input-producto" placeholder="Nombre del producto">
+            <input type="text" id="input-cliente" placeholder="Cliente">
+            <input type="text" id="input-descripcion" placeholder="Descripción">
+            <input type="number" id="input-precio" placeholder="Precio de Venta">
+            <button id="btn-agregar-venta">Agregar Venta</button>
+        </div>
+        <table id="sales-table">
+            <thead>
+                <tr>
+                    <th>Cantidad</th>
+                    <th>Producto</th>
+                    <th>Cliente</th>
+                    <th>Descripción</th>
+                    <th>Precio Unitario</th>
+                    <th>Precio Total</th>
+                    <th>Estado de Pago</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Las filas de ventas se agregarán aquí dinámicamente con JavaScript -->
+            </tbody>
+        </table>
+    </div>
+    <div id="cliente-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Buscar Cliente</h2>
+            <input type="text" id="buscar-cliente" placeholder="Nombre del cliente">
+            <button id="btn-buscar-cliente">Buscar</button>
+            <div id="historial-cliente"></div>
+        </div>
+    </div>
+    <div id="producto-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Ingreso de Producto</h2>
+            <input type="text" id="input-nombre-producto" placeholder="Nombre del producto">
+            <input type="number" id="input-cantidad-producto" placeholder="Cantidad">
+            <input type="number" id="input-precio-venta" placeholder="Precio de venta">
+            <textarea id="input-descripcion-producto" placeholder="Descripción"></textarea>
+            <button id="btn-guardar-producto">Guardar Producto</button>
+        </div>
+    </div>
+    <div id="registro-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Registro</h2>
+            <input type="text" id="input-nombre-negocio" placeholder="Nombre del negocio">
+            <input type="text" id="input-tipo-servicios" placeholder="Tipo de servicios">
+            <input type="text" id="input-nombre" placeholder="Nombre">
+            <input type="text" id="input-apellido" placeholder="Apellido">
+            <button id="btn-guardar-registro">Guardar Registro</button>
+            <button id="btn-reset">Reset</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
